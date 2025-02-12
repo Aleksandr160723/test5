@@ -1,0 +1,305 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #fff !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+}
+
+.container {
+    text-align: center;
+    background: linear-gradient(135deg, #000000, rgb(60, 15, 134), rgb(0, 20, 49), rgb(36, 1, 1), rgb(18, 2, 34), rgb(73, 10, 2), rgb(2, 1, 0));
+    padding: 30px;
+    height: calc(100vh - 80px); /* Учитываем высоту нижней панели */
+    width: 90%;
+    max-width: 1200px;
+    box-sizing: border-box;
+    margin-bottom: 40px; /* Отступ для нижней панели */
+    
+}
+
+.balance-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    height: -200px;
+}
+
+.balance-label {
+    font-size: 22px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    transform: translate(32px, -240px);
+}
+
+.balance {
+    text-align: left;
+    width: 300px;
+    font-size: 35px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    margin-top: 75px;
+    transform: translate(-50px, -235px);
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.level-box, .click-box {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 7px 28px;
+    border-radius: 70px;
+    background: linear-gradient(135deg, #740000, rgb(196, 2, 2), rgb(110, 27, 1), rgb(97, 1, 1), rgb(0, 0, 0));
+    color: white;
+    margin-top: -45px;
+    position: relative;
+    top: -175px;
+    transform: translateX(11px);
+}
+
+.click-area {
+    height: 350px;
+    margin-bottom: 50px;
+    padding: 120px;
+    position: relative;
+    top: -125px;
+    background: linear-gradient(#000000, #7e1305, rgb(129, 0, 0), rgb(0, 0, 0));
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(55, 53, 179, 0.493);
+    cursor: pointer;
+    user-select: none;
+    font-size: 19px;
+    font-weight: bold;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+/* Новая фиксированная панель навигации */
+.bottom-nav-panel {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(135deg, #000000, rgb(60, 15, 134));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 20px;
+    transform: translateX(-30px);
+}
+
+.nav-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 35%;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: none;
+    filter: none;
+}
+
+.add-btn {
+    background: #2225b4;
+    color: white;
+}
+
+.back-btn {
+    background: #8a0909;
+    color: white;
+}
+
+.nav-btn:active {
+    transform: scale(0.95);
+}
+
+.white-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 60px); /* Учитываем высоту нижней панели */
+    background: linear-gradient(135deg, #000000, rgb(60, 15, 134), rgb(0, 1, 51), rgb(14, 0, 39));
+    padding: 30px;
+    display: none;
+    z-index: 999;
+    box-sizing: border-box;
+}
+
+.subpage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 60px);
+    background: linear-gradient(135deg, #200000, rgb(71, 12, 4), rgb(151, 24, 7), rgb(122, 1, 1), rgb(36, 1, 1));
+    padding: 30px;
+    display: none;
+    z-index: 200;
+    box-sizing: border-box;
+}
+
+.enterprise {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.nav-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 50px;
+}
+
+.tab-btn {
+    width: 100%;
+    padding: 18px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #000000, rgb(197, 15, 15), rgb(102, 1, 1), rgb(32, 0, 0));
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    transform: translateY(150px);
+}
+
+.tab-btn:active {
+    transform: scale(0.98);
+}
+
+.main-bg {
+    width: 100%;
+    max-width: 500px;
+    height: 29%;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+        height: calc(100vh - 60px);
+    }
+
+    .click-area {
+        padding: 60px;
+        height: 120px;
+        margin-bottom: 20px;
+    }
+
+    .balance {
+        font-size: 28px;
+    }
+
+    .stats {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .overlay-ui {
+        top: 10px;
+        left: 10px;
+        font-size: 16px;
+    }
+}
+/* Контейнер карты */
+.container.main-page {
+    position: relative; /* Для абсолютного позиционирования дочерних элементов */
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    top: 20px;
+}
+
+.map-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Карта на весь экран */
+    position: absolute;
+    top: 0;
+    left: 10;
+    z-index: 1; /* Уровень ниже текста */
+}
+
+/* Элементы поверх карты */
+.overlay-ui {
+    position: absolute;
+    top: 20px; /* Отступ сверху */
+    left: 20px; /* Отступ слева */
+    z-index: 2; !important; /* Поверх карты */
+    color: white; /* Белый текст */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Тень для контраста */
+}
+
+/* Стили для текста */
+.balance-container {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.stats {
+    font-size: 20px;
+}
+
+.level-box, .click-box {
+    display: inline-block;
+    margin-right: 20px;
+}
+/* Запрет прокрутки для всего документа */
+html, body {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    touch-action: none; /* Блокировка жестов на мобильных */
+}
+
+/* Фиксированный размер для контейнеров */
+.container, 
+.subpage, 
+.white-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+.movable-page {
+    max-width: 90%; /* Не шире экрана */
+    max-height: 80vh; /* Не выше экрана */
+}
+.enterprise, 
+.nav-buttons {
+    max-width: 100%;
+    white-space: nowrap; /* Текст не переносится */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
